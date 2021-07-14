@@ -1,0 +1,52 @@
+{
+  "build": {
+    "arduino": {
+        "ldscript": "flash_without_bootloader.ld"
+    },
+    "core": "arduino",
+    "cpu": "cortex-m0plus",
+    "extra_flags": "-DARM_MATH_CM0PLUS -DCRYSTALLESS -D__SAMD21E15A__",
+    "extra_flags_note": "Note USB not enabled. Also __SAMD21E15A__ is used rather than __SAMD21E15B__ because samd21.h from the Atmel CMSIS doesn't have the latter but they're the same",
+    "f_cpu": "48000000L",
+    "hwids": [
+      [
+        "0x03EB",
+        "0x2111"
+      ]
+    ],
+    "mcu": "samd21e15a",
+    "system": "samd",
+    "usb_product": "Generic SAMD21E15B",
+    "variant": "generic_samd21e15b",
+    "variants_dir" : "variants"
+  },
+  "debug": {
+    "jlink_device": "ATSAMD21E15",
+    "openocd_chipname": "at91samd21e15",
+    "openocd_target": "at91samd21X",
+    "svd_path": "ATSAMD21E18A.svd",
+    "svd_path_note": "we use the svd for the samd21e18a because it's the same and is already in the framework dir"
+  },
+  "frameworks": [
+    "arduino"
+  ],
+  "name": "Generic SAMD21E15B",
+  "upload": {
+    "disable_flushing": true,
+    "maximum_ram_size": 4096,
+    "maximum_size": 32768,
+    "native_usb": false,
+    "protocol": "jlink",
+    "protocols": [
+      "sam-ba",
+      "blackmagic",
+      "jlink",
+      "atmel-ice"
+    ],
+    "require_upload_port": true,
+    "use_1200bps_touch": true,
+    "wait_for_upload_port": true
+  },
+  "url": "https://www.microchip.com/wwwproducts/en/ATSAMD21E15",
+  "vendor": "Generic"
+}
