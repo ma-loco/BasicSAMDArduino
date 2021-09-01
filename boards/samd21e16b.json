@@ -1,0 +1,51 @@
+{
+  "build": {
+    "arduino": {
+        "ldscript": "flash_without_bootloader.ld"
+    },
+    "core": "arduino",
+    "cpu": "cortex-m0plus",
+    "extra_flags": "-DARM_MATH_CM0PLUS -DCRYSTALLESS -D__SAMD21E16A__",
+    "f_cpu": "48000000L",
+    "hwids": [
+      [
+        "0x03EB",
+        "0x2111"
+      ]
+    ],
+    "mcu": "samd21e16b",
+    "system": "samd",
+    "usb_product": "Generic SAMD21E16B",
+    "variant": "generic_samd21e16b",
+    "variants_dir" : "variants"
+  },
+  "debug": {
+    "jlink_device": "ATSAMD21E16",
+    "openocd_chipname": "at91samd21e16",
+    "openocd_target": "at91samd21X",
+    "svd_path": "ATSAMD21E18A.svd",
+    "svd_path_note": "The samd21e18a SVD path is used because it's the same (memory amount doesn't matter) and is already in the framework dir"
+  },
+  "frameworks": [
+    "arduino"
+  ],
+  "name": "Generic SAMD21E16B",
+  "upload": {
+    "disable_flushing": true,
+    "maximum_ram_size": 8192,
+    "maximum_size": 65536,
+    "native_usb": false,
+    "protocol": "jlink",
+    "protocols": [
+      "sam-ba",
+      "blackmagic",
+      "jlink",
+      "atmel-ice"
+    ],
+    "require_upload_port": true,
+    "use_1200bps_touch": true,
+    "wait_for_upload_port": true
+  },
+  "url": "https://www.microchip.com/wwwproducts/en/ATSAMD21E16",
+  "vendor": "Generic"
+}
