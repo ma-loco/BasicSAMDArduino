@@ -201,8 +201,6 @@ Wire Wire Line
 Wire Wire Line
 	2300 6000 3800 6000
 Wire Wire Line
-	3800 6000 3800 5800
-Wire Wire Line
 	3800 5800 4000 5800
 Wire Wire Line
 	4000 5900 3900 5900
@@ -246,10 +244,10 @@ Wire Wire Line
 	4600 1850 4350 1850
 Text GLabel 4800 1100 2    50   Input ~ 0
 VDDIN
-Text GLabel 2650 5900 2    50   Output ~ 0
+Text GLabel 3200 5700 2    50   Output ~ 0
 VDDIN
 Wire Wire Line
-	2300 5900 2650 5900
+	2300 5900 3100 5900
 Wire Wire Line
 	3750 1850 3750 2400
 Wire Wire Line
@@ -371,4 +369,29 @@ F 3 "~" H 4800 1550 50  0001 C CNN
 $EndComp
 Text Notes 6200 1500 0    50   ~ 0
 Note: \n- C1, C3 and C5 should be placed as close as possible to the pins of the microcontroller. On an \nadaptor board for C1 and C3 you can use SMD caps size 0604 and solder them between two pins of the pin row.\n- C2 and C4 should be Tantalum. If all you have are Electrolitic Caps, use 10x larger cap values.
+$Comp
+L Device:R R1
+U 1 1 617ED0E8
+P 3550 5900
+F 0 "R1" V 3343 5900 50  0000 C CNN
+F 1 "1K" V 3434 5900 50  0000 C CNN
+F 2 "" V 3480 5900 50  0001 C CNN
+F 3 "~" H 3550 5900 50  0001 C CNN
+	1    3550 5900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3200 5700 3100 5700
+Wire Wire Line
+	3100 5700 3100 5900
+Connection ~ 3100 5900
+Wire Wire Line
+	3100 5900 3400 5900
+Wire Wire Line
+	3800 5800 3800 5900
+Wire Wire Line
+	3700 5900 3800 5900
+Connection ~ 3800 5900
+Wire Wire Line
+	3800 5900 3800 6000
 $EndSCHEMATC
